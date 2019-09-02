@@ -1,0 +1,31 @@
+<h1>Bulk Import</h1>
+<p id="notice"><%= notice %></p>
+
+
+<%= form_with(url: import_csv_home_index_path, method: :post, format: :csv) do |f| %>
+  <div class="field">
+    <%= f.collection_select :company_id, Company.order(:name),:id,:name,  {prompt: "Select Company"},  include_blank: true , required: true%>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :file, required: true %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+
+
+<script type="text/javascript">
+  $("#file").change(function(){
+    readURL(this);
+  });
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      if (reader = input.files[0]['name'].split('.')[1] != 'csv'){
+        alert('Please add csv file');
+      }
+    }
+  }
+</script>
+

@@ -4,7 +4,7 @@ RSpec.describe "policies/show", :type => :view do
   before(:each) do
     @policy = assign(:policy, Policy.create!(
       :name => "Name",
-      :company => nil
+      :company_id => Company.create(name: "test").id
     ))
   end
 

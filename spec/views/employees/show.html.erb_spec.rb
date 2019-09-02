@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "employees/show", :type => :view do
   before(:each) do
     @employee = assign(:employee, Employee.create!(
-      :name => "Name",
-      :email => "Email",
-      :phone => "Phone",
-      :company => nil
+      :name => "test",
+      :email => "test@gmail.com",
+      :phone => "1234567980",
+      :company_id => Company.create(name: "test").id
     ))
   end
 
