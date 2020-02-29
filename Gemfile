@@ -55,6 +55,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'awesome_nested_set'
-gem 'rake', '< 11.0'
+gem 'rake', '< 13.0'
 gem 'activerecord-import'
 gem 'jquery-rails'
